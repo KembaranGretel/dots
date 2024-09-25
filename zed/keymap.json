@@ -1,0 +1,94 @@
+// Zed keymap
+
+// For information on binding keys, see the Zed
+
+// documentation: https://zed.dev/docs/key-bindings
+
+//
+
+// To see the default key bindings run `zed: open default keymap`
+
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-b": "workspace::ToggleLeftDock",
+      "ctrl-n": "workspace::ToggleRightDock",
+      "alt-enter": "zed::ToggleFullScreen",
+      "ctrl-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "ctrl-w": "pane::CloseActiveItem",
+      // "ctrl-t t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {}
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"]
+      // "ctrl-t t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-x": "editor::Cut",
+      "ctrl-v": "editor::Paste",
+      "shift-u": "vim::Redo",
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-o": "workspace::Open",
+      "ctrl-a": "editor::SelectAll",
+      "shift-enter": "vim::ToggleComments"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-enter": "vim::ToggleComments",
+      "q q": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-shift-k": "pane::SplitUp",
+      "alt-shift-j": "pane::SplitDown",
+      "alt-shift-h": "pane::SplitLeft",
+      "alt-shift-l": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "alt-k": "editor::ContextMenuPrev",
+      "alt-j": "editor::ContextMenuNext"
+    }
+  }
+]
